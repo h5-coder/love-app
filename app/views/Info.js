@@ -9,7 +9,7 @@ const styles = StyleSheet.create({
     list: {
         flexDirection: 'row',
         justifyContent: 'space-between',
-        paddingHorizontal: 10,
+        paddingHorizontal: 15,
         paddingVertical: 5,
         borderRadius: 4,
         borderBottomWidth: StyleSheet.hairlineWidth,
@@ -26,12 +26,16 @@ class HomeScreen extends React.Component {
         return (
             <View>
                 <View style={styles.list}>
+                    <Text>{boy.name}</Text>
+                    <Text>{girl.name}</Text>
+                </View>
+                <View style={styles.list}>
                     <Text>{boy.sex}</Text>
                     <Text>{girl.sex}</Text>
                 </View>
                 <View style={styles.list}>
-                    <Text>{boy.name}</Text>
-                    <Text>{girl.name}</Text>
+                    <Text>{boy.birth}</Text>
+                    <Text>{girl.birth}</Text>
                 </View>
             </View>
         );
