@@ -11,9 +11,9 @@ class MyScreen extends React.Component {
             <View
                 style={{
                     flexDirection: "row",
-                    height: 200,
+                    height: '100%',
                     padding: 45,
-                    background:'red',
+                    backgroundColor:'#ccc',
                 }}
             >
                 <Button
