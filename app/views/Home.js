@@ -3,7 +3,7 @@ import { Button } from 'react-native';
 
 class HomeScreen extends React.Component {
     static navigationOptions = {
-        title: 'Home',
+        title: '首页',
     };
     render() {
         const { navigate } = this.props.navigation;
