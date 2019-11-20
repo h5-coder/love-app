@@ -128,7 +128,7 @@ android {
     }
 
     defaultConfig {
-        // applicationId "com.loveapp"
+        applicationId "com.loveapp"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
