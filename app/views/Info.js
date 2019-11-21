@@ -1,7 +1,8 @@
 import React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet, Image } from 'react-native';
 
 import { boy, girl } from '../config/config.js';
+import ProfilePicture from '../components/profilePicture'
 
 console.log(boy, girl);
 
@@ -27,6 +28,7 @@ class HomeScreen extends React.Component {
             <View style={{
                 paddingTop: 35
             }}>
+                <ProfilePicture />
                 <View style={styles.list}>
                     <Text>{boy.name}</Text>
                     <Text>{girl.name}</Text>
