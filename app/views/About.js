@@ -11,7 +11,7 @@ class MyScreen extends React.Component {
       <View
         style={{
           flexDirection: 'column',
-          height: 200,
+          height: "auto",
           paddingVertical: 45,
         }}>
         <View style={{width: '100%'}}>

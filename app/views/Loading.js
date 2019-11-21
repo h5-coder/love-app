@@ -7,6 +7,7 @@ class MyScreen extends React.Component {
     static navigationOptions = {
         title: '首屏',
     };
+    
     render() {
         const { navigate } = this.props.navigation;
         return (
@@ -20,17 +21,17 @@ class MyScreen extends React.Component {
             <View
               style={{
                 position: 'absolute',
-                top: 10,
+                bottom: 30,
                 right: 10,
                 fontSize: 10,
-                width: 50,
-                height: 10,
+                width: 60,
               }}>
               <Button
-                color="transparent"
+                // color="transparent"
                 title="跳过"
                 style={{
-                    // padding: 0,
+                    // color:'#000'
+                    padding: 0,
                 }}
                 onPress={() => navigate('Tab', {name: 'lyx'})}
               />

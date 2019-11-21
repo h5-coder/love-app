@@ -24,7 +24,9 @@ class HomeScreen extends React.Component {
     render() {
         const { navigate } = this.props.navigation;
         return (
-            <View>
+            <View style={{
+                paddingTop: 35
+            }}>
                 <View style={styles.list}>
                     <Text>{boy.name}</Text>
                     <Text>{girl.name}</Text>
