@@ -17,8 +17,9 @@ const styles = StyleSheet.create({
         borderColor: '#d6d7da',
     },
     main: {
-        // transform: 'rotate(45deg)',
+        transform: [{ rotate:'45deg' }],
         margin: 100,
+        backgroundColor:'red'
     }
 });
 
@@ -42,8 +43,8 @@ class ProfilePicture extends React.Component {
 
                 <Image
                     style={{
-                        width: 100,
-                        height: 100,
+                        width: 200,
+                        height: 200,
                     }}
                     source={require('../images/profile-picture.jpeg')}
                 />
