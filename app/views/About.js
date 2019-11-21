@@ -53,7 +53,7 @@ class MyScreen extends React.Component {
             fontSize: 12,
             color: '#ccc',
           }}>
-          作者：liangyanxiangde@163.com
+          Author：liangyanxiangde@163.com
         </Text>
       </View>
     );
