@@ -2,6 +2,7 @@
 import { createAppContainer } from 'react-navigation';
 import { createStackNavigator } from 'react-navigation-stack';
 import { createBottomTabNavigator } from 'react-navigation-tabs';
+import Icon from "react-native-vector-icons/Ionicons";
 
 //其他按需导入
 import React from 'react';
@@ -10,51 +11,70 @@ import React from 'react';
 import loading from './Loading';
 import home from './Home'
 import my from './My'
-import inof from './Info'
+import info from './Info'
 import about from './About';
+import test from './Test'
+
 
 // 底部导航栏
 const BottomContainer = createBottomTabNavigator(
-  {
-    HomeTab: {
-      screen: home,
-      navigationOptions: {
-        // tabBarLabel: '首页',
-      },
+    {
+        HomeTab: {
+            screen: home,
+            navigationOptions: {
+                // tabBarLabel: '首页',
+                tabBarIcon: ({focused}) => {
+                    return (
+                        <Icon
+                            name="ios-add"
+                            size={30}
+                            color="blue"
+                            backgroundColor="#ccc"
+                        />
+                    );
+                },
+            },
+        },
+        Info: {
+            screen: info,
+            navigationOptions: {
+                // tabBarLabel: '我的',
+            },
+        },
+        about: {
+            screen: about,
+            navigationOptions: {
+                // tabBarLabel: '关于',
+            },
+        },
+        Test: {
+            screen: test,
+            navigationOptions: {
+                tabBarLabel: '测试',
+            },
+        },
     },
-    Info: {
-      screen: inof,
-      navigationOptions: {
-        // tabBarLabel: '我的',
-      },
+    {
+        defaultNavigationOptions: ({navigation}) => {
+            const {routeName} = navigation.state;
+            let headerTitle = routeName;
+            return {
+                headerTitle,
+            };
+        },
+        tabBarOptions: {
+            showIcon: true,
+            activeTintColor: '#3DA8F5',
+            inactiveTintColor: '#808080',
+            labelStyle: {
+                fontSize: 12,
+            },
+            style: {
+                backgroundColor: '#FFFFFF',
+                borderColor: 'white',
+            },
+        },
     },
-    about: {
-      screen: about,
-      navigationOptions: {
-        // tabBarLabel: '关于',
-      },
-    },
-  },
-  {
-    defaultNavigationOptions: ({navigation}) => {
-      const {routeName} = navigation.state;
-      let headerTitle = routeName;
-      return {
-        headerTitle,
-      };
-    },
-    tabBarOptions: {
-      activeTintColor: '#3DA8F5',
-      inactiveTintColor: '#808080',
-      labelStyle: {
-        fontSize: 12,
-      },
-      style: {
-        backgroundColor: '#FFFFFF',
-        borderColor: 'white',
-      },
-    },
-  },
 );
 
 //将底部导航栏和其他页面组合在一起

@@ -1,5 +1,6 @@
 import React from 'react';
-import { Button } from 'react-native';
+import { Button, View } from 'react-native';
+import {WebView} from 'react-native-webview';
 
 class HomeScreen extends React.Component {
     static navigationOptions = {
@@ -8,10 +9,21 @@ class HomeScreen extends React.Component {
     render() {
         const { navigate } = this.props.navigation;
         return (
-            <Button
-                title="Go to My"
-                onPress={() => navigate('My', { name: 'lyx' })}
-            />
+            <View styly={{height: 200}}>
+                <WebView
+                    style={{
+                        flex: 1,
+                        width: 100,
+                        height: 100,
+                        backgroundColor: 'red',
+                    }}
+                    source={{uri: 'https://facebook.github.io/react-native/'}}
+                />
+                <Button
+                    title="Go to My"
+                    onPress={() => navigate('My', {name: 'lyx'})}
+                />
+            </View>
         );
     }
 }

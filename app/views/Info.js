@@ -1,5 +1,6 @@
 import React from 'react';
-import { View, Text, StyleSheet, Image } from 'react-native';
+import { View, Text, StyleSheet } from 'react-native';
+import {WebView} from 'react-native-webview';
 
 import { boy, girl } from '../config/config.js';
 import ProfilePicture from '../components/profilePicture'
@@ -25,9 +26,10 @@ class HomeScreen extends React.Component {
     render() {
         const { navigate } = this.props.navigation;
         return (
-            <View style={{
-                paddingTop: 35
-            }}>
+            <View
+                style={{
+                    paddingTop: 35,
+                }}>
                 <ProfilePicture />
                 <View style={styles.list}>
                     <Text>{boy.name}</Text>
@@ -41,6 +43,15 @@ class HomeScreen extends React.Component {
                     <Text>{boy.birth}</Text>
                     <Text>{girl.birth}</Text>
                 </View>
+                <WebView
+                    scrollEnabled={false}
+                    style={{
+                        width: 100,
+                        height: 100,
+                        backgroundColor: 'red',
+                    }}
+                    source={{uri: 'https://www.baidu.com'}}
+                />
             </View>
         );
     }
