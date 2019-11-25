@@ -17,7 +17,7 @@ class HomeScreen extends React.Component {
                         height: 100,
                         backgroundColor: 'red',
                     }}
-                    source={{uri: 'https://facebook.github.io/react-native/'}}
+                    source={{uri: 'https://www.baidu.com/'}}
                 />
                 <Button
                     title="Go to My"
