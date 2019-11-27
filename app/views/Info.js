@@ -1,11 +1,18 @@
 import React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import {View, Text, StyleSheet} from 'react-native';
 import {WebView} from 'react-native-webview';
 
-import { boy, girl } from '../config/config.js';
-import ProfilePicture from '../components/profilePicture'
+import {boy, girl} from '../config/config.js';
+import ProfilePicture from '../components/profilePicture';
 
 console.log(boy, girl);
+
+const calcAge = birth => {
+    return new Date().getFullYear() - birth.slice(0, 4) + '岁';
+};
+
+boy.age = calcAge(boy.birth);
+girl.age = calcAge(girl.birth);
 
 const styles = StyleSheet.create({
     list: {
@@ -19,30 +26,29 @@ const styles = StyleSheet.create({
     },
 });
 
+const keyList = ['name', 'sex', 'birth', 'age'];
+
+const list = keyList.map(item => {
+    return (
+        <View style={styles.list}>
+            <Text>{boy[item]}</Text>
+            <Text>{girl[item]}</Text>
+        </View>
+    );
+});
 class HomeScreen extends React.Component {
     static navigationOptions = {
         title: '资料',
     };
     render() {
-        const { navigate } = this.props.navigation;
+        const {navigate} = this.props.navigation;
         return (
             <View
                 style={{
                     paddingTop: 35,
                 }}>
                 <ProfilePicture />
-                <View style={styles.list}>
-                    <Text>{boy.name}</Text>
-                    <Text>{girl.name}</Text>
-                </View>
-                <View style={styles.list}>
-                    <Text>{boy.sex}</Text>
-                    <Text>{girl.sex}</Text>
-                </View>
-                <View style={styles.list}>
-                    <Text>{boy.birth}</Text>
-                    <Text>{girl.birth}</Text>
-                </View>
+                {list}
                 <WebView
                     scrollEnabled={false}
                     style={{

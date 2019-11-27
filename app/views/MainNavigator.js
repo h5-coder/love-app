@@ -41,7 +41,7 @@ const BottomContainer = createBottomTabNavigator(
                 // tabBarLabel: '我的',
             },
         },
-        about: {
+        About: {
             screen: about,
             navigationOptions: {
                 // tabBarLabel: '关于',

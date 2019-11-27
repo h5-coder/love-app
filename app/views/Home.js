@@ -9,19 +9,14 @@ class HomeScreen extends React.Component {
     render() {
         const { navigate } = this.props.navigation;
         return (
-            <View styly={{height: 200}}>
+            <View style={{height: '100%'}}>
                 <WebView
                     style={{
-                        flex: 1,
-                        width: 100,
-                        height: 100,
+                        // flex: 1,
+                        height: 700,
                         backgroundColor: 'red',
                     }}
-                    source={{uri: 'https://www.baidu.com/'}}
-                />
-                <Button
-                    title="Go to My"
-                    onPress={() => navigate('My', {name: 'lyx'})}
+                    source={{uri: 'https://lovely-man.github.io/rqm/love.html'}}
                 />
             </View>
         );

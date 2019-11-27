@@ -43,7 +43,7 @@ class MyScreen extends React.Component {
 
     goToTab() {
         const {navigate} = this.props.navigation;
-        return navigate('Tab', {name: 'lyx'});
+        return navigate('HomeTab', {name: 'lyx'});
     }
 
     render() {
@@ -70,7 +70,7 @@ class MyScreen extends React.Component {
                             // color:'#000'
                             padding: 0,
                         }}
-                        onPress={()=>this.goToTab}
+                        onPress={()=>this.goToTab()}
                     />
                 </View>
 

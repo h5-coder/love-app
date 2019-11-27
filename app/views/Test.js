@@ -31,7 +31,7 @@ class TestScreen extends React.Component {
                 />
             </View>
             <Button
-                title="Go to 首屏"
+                title="首屏"
                 onPress={() => navigate('Loading', {name: 'lyx'})}
             />
             <Button
@@ -39,8 +39,16 @@ class TestScreen extends React.Component {
                 onPress={() => navigate('Tab', {name: 'lyx'})}
             />
             <Button
-                title="Go to Home"
+                title="首页"
                 onPress={() => navigate('Home', {name: 'lyx'})}
+            />
+            <Button
+                title="关于"
+                onPress={() => navigate('About', {name: 'lyx'})}
+            />
+            <Button
+                title="我的"
+                onPress={() => navigate('My', {name: 'lyx'})}
             />
         </View>
     );
