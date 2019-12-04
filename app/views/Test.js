@@ -6,6 +6,7 @@ class TestScreen extends React.Component {
     title: '测试',
   };
   render() {
+    console.log('liyuan-2019-12-04');
     const {navigate} = this.props.navigation;
     return (
         <View
