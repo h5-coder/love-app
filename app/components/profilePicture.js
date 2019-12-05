@@ -21,7 +21,9 @@ const styles = StyleSheet.create({
     img: {
         width: 200,
         height: 200,
-        borderRadius:100
+        borderRadius:100,
+        borderColor:'red',
+        borderWidth:2
     },
 });
 

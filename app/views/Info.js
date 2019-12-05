@@ -17,22 +17,32 @@ girl.age = calcAge(girl.birth);
 const styles = StyleSheet.create({
     list: {
         flexDirection: 'row',
-        justifyContent: 'space-between',
+        justifyContent: 'center',
         paddingHorizontal: 15,
         paddingVertical: 5,
         borderRadius: 4,
         borderBottomWidth: StyleSheet.hairlineWidth,
         borderColor: '#d6d7da',
     },
+    blue:{
+        color:'blue',
+        // textAlign:'right',
+        paddingHorizontal:5
+    },
+    pink:{
+        color:'fuchsia',
+        // textAlign:'left'
+        paddingHorizontal:5
+    }
 });
 
-const keyList = ['name', 'sex', 'birth', 'age'];
+const keyList = ['name', 'sex', 'age','birth',];
 
 const list = keyList.map(item => {
     return (
-        <View style={styles.list}>
-            <Text>{boy[item]}</Text>
-            <Text>{girl[item]}</Text>
+        <View style={styles.list} key={item}>
+            <Text style={styles.blue}>{boy[item]}</Text>
+            <Text style={styles.pink}>{girl[item]}</Text>
         </View>
     );
 });
@@ -49,15 +59,6 @@ class HomeScreen extends React.Component {
                 }}>
                 <ProfilePicture />
                 {list}
-                <WebView
-                    scrollEnabled={false}
-                    style={{
-                        width: 100,
-                        height: 100,
-                        backgroundColor: 'red',
-                    }}
-                    source={{uri: 'https://www.baidu.com'}}
-                />
             </View>
         );
     }
