@@ -4,7 +4,11 @@ import {Button, View, Text, SectionList} from 'react-native';
 class TestScreen extends React.Component {
   static navigationOptions = {
     title: '测试',
-  };
+    };
+    click() {
+        console.log(this.props.navigation);
+        this.props.navigation.openDrawer()
+    }
   render() {
     const {navigate} = this.props.navigation;
     return (
@@ -49,6 +53,10 @@ class TestScreen extends React.Component {
             <Button
                 title="我的"
                 onPress={() => navigate('My', {name: 'lyx'})}
+            />
+            <Button
+                title="我的"
+                onPress={this.click()}
             />
         </View>
     );
